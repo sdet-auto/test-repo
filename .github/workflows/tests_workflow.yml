@@ -12,6 +12,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Echo
+        run: echo This is a step
+      - name: More commands
+        run: |
+          ls
+          pwd
+          echo This is another steps
+          echo With more commands
+          echo Split over multiple line
       - name: Sleep
         run: |
           sleep ${{ github.event.inputs.time }}
