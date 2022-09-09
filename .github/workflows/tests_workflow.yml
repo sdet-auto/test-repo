@@ -1,8 +1,6 @@
 name: Test
 
 on:
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
     inputs:
       time:
@@ -15,4 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sleep
-        run: sleep ${{ github.event.inputs.time }}
+        run: |
+          sleep ${{ github.event.inputs.time }}
+          exit 100
